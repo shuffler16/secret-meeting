@@ -3,7 +3,6 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-#  new Geocoder($('.geolocate'), $('#locationSearchText'));
   SecretMeeting.Geocoder = (->
     populateSearchText = (locationText) ->
       $("#locationSearchText").val(locationText)

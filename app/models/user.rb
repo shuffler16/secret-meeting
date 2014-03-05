@@ -1,5 +1,12 @@
 class User < ActiveRecord::Base
-  has_secure_password
+  rolify
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
+  has_many :event_participants
+  has_many :events, through: :event_participants
 
   def to_s
     "#{first_name} #{last_name}"
